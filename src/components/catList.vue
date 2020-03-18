@@ -4,14 +4,14 @@
     <div class="product" v-for="product in products" :key="product.id">
       <div class="info">
         <h1>{{product.name}}</h1>
-        <p>{{product.country}}</p>
+        <p>{{product.category}}</p>
       </div>
       <div class="image">
         <img :src="'/images/products/'+product.image">
       </div>
       <div class="price">
-        <h2>{{product.price}}</h2>
-        <button class="auto" @click="addItem(product)">Add to Cart</button>
+        <h2>{{product.gender}}</h2>
+        <button class="auto" @click="addItem(product)">Like</button>
       </div>
     </div>
   </div>
@@ -26,14 +26,8 @@ export default {
   },
   methods: {
     addItem(product) {
-      if(this.$root.$data.quantity[product.id - 1] === 0){
-        this.$root.$data.cart.push(product);
-        this.$root.$data.quantity[product.id - 1]++;
-      }
-      else {
-        this.$root.$data.quantity[product.id - 1]++;
-      }
-    },
+      this.$root.$data.quantity[product.id - 1]++;
+    }
   }
 }
 

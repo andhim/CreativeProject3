@@ -37,7 +37,7 @@
     methods: {
       count() {
         const size = this.$root.$data.cart.length
-        return size + (size === 1 ? " item" : " items") 
+        return size + (size === 1 ? " item" : " items")
       }
     }
   }

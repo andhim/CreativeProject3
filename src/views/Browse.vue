@@ -2,36 +2,36 @@
 <div>
   <div class="pure-menu pure-menu-horizontal">
     <ul class="pure-menu-list">
-      <li class="pure-menu-item"><a @click="select('United States')" href="#" class="pure-menu-link">United States</a></li>
-      <li class="pure-menu-item"><a @click="select('Canada')" href="#" class="pure-menu-link">Canada</a></li>
-      <li class="pure-menu-item"><a @click="select('Mexico')" href="#" class="pure-menu-link">Mexico</a></li>
-      <li class="pure-menu-item"><a @click="select('Brazil')" href="#" class="pure-menu-link">Brazil</a></li>
+      <li class="pure-menu-item"><a @click="select('Beautiful')" href="#" class="pure-menu-link">Beautiful</a></li>
+      <li class="pure-menu-item"><a @click="select('Cool')" href="#" class="pure-menu-link">Cool</a></li>
+      <li class="pure-menu-item"><a @click="select('Cute')" href="#" class="pure-menu-link">Cute</a></li>
+      <li class="pure-menu-item"><a @click="select('Fun')" href="#" class="pure-menu-link">Fun</a></li>
     </ul>
   </div>
-  <ProductList :products="products" />
+  <catList :cats="cats" />
 </div>
 </template>
 
 <script>
-import ProductList from "../components/ProductList.vue"
+import catList from "../components/catList.vue"
 export default {
   name: 'Browse',
   components: {
-    ProductList
+    catList
   },
   data() {
     return {
-      country: '',
+      category: '',
     }
   },
   computed: {
-    products() {
-      return this.$root.$data.products.filter(product => product.country === this.country);
+    cats() {
+      return this.$root.$data.cats.filter(cat => cat.category === this.category);
     }
   },
   methods: {
-    select(country) {
-      this.country = country;
+    select(category) {
+      this.category = category;
     }
   }
 }

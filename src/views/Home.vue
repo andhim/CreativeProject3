@@ -7,16 +7,16 @@
       </form>
     </div>
   </div>
-  <ProductList :products="products" />
+  <catList :cats="cats" />
 </div>
 </template>
 
 <script>
-import ProductList from "../components/ProductList.vue"
+import catList from "../components/catList.vue"
 export default {
   name: 'Home',
   components: {
-    ProductList
+    catList
   },
   data() {
     return {
@@ -24,8 +24,8 @@ export default {
     }
   },
   computed: {
-    products() {
-      return this.$root.$data.products.filter(product => product.name.toLowerCase().search(this.searchText) >= 0);
+    cats() {
+      return this.$root.$data.cats.filter(cat => cat.name.toLowerCase().search(this.searchText) >= 0);
     }
   },
 }
